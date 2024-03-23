@@ -3,8 +3,10 @@
     <meta charset="UTF-8" />
     <title>drawing-board</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   </head>
   <body>
+    <div id="content"></div>
     <canvas id="canvas" width="800" height="700"></canvas>
     <div class="toolbox">
       <button id="decrease">减小</button>
@@ -15,5 +17,17 @@
       <button id="clear">清除</button>
     </div>
     <script src="script.js"></script>
+    <script>
+      // 假设你的Markdown文件是这样加载的
+      fetch("./readme.md")
+        .then((response) => response.text())
+        .then((markdown) => {
+          // 使用Marked.js将Markdown转换为HTML
+          var html = marked(markdown);
+
+          // 将转换后的HTML内容插入到页面中
+          document.getElementById("content").innerHTML = html;
+        });
+    </script>
   </body>
 </html>
