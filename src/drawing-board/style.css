@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+canvas {
+  border: 2px solid skyblue;
+}
+.toolbox {
+  background-color: skyblue;
+  display: flex;
+  width: 800px;
+  padding: 1rem;
+}
+.toolbox > * {
+  background-color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  margin: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+.toolbox > :last-child {
+  margin-left: auto;
+}
