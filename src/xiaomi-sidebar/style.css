@@ -1,0 +1,75 @@
+/* 默认样式更改 */
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+p {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+/* 父容器 */
+body {
+  height: 2000px;
+  background-color: #ddd;
+}
+/* 业务逻辑 */
+.container {
+  width: 85px;
+  height: 500px;
+
+  /* 定位 */
+  position: fixed;
+  right: 20px;
+  bottom: 100px;
+  ul {
+    li {
+      width: 85px;
+      height: 85px;
+      /* border: 1px solid red; */
+      background-color: #fff;
+      span {
+        width: 85px;
+        height: 50px;
+        /* background-color: green; */
+        display: block;
+        font-size: 28px;
+        color: #666;
+        text-align: center;
+        line-height: 50px;
+      }
+      p {
+        font-size: 14px;
+        text-align: center;
+      }
+    }
+    & li:last-child {
+      margin-top: 20px;
+    }
+    & li:hover > * {
+      color: #e67e22;
+    }
+    & li:hover {
+      background-color: #ddd;
+      cursor: pointer;
+      /* 此处.QRCode并非所有li被hover之后都会触发 */
+      .QRCode {
+        display: block;
+      }
+    }
+
+    .QRCode {
+      width: 100px;
+      height: 100px;
+      background-color: #fff;
+      position: absolute;
+      top: 0px;
+      left: -150px;
+      padding: 15px;
+      display: none;
+    }
+  }
+}
