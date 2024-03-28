@@ -1,0 +1,70 @@
+/* 清除默认样式 */
+body,
+h3,
+h4,
+p {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+/*  业务逻辑 */
+.container {
+  width: 350px;
+  /* height: 500px; */
+  /* border: 1px solid #9d9a9a; */
+  margin: 50px auto 0;
+  h3 {
+    /* border: 1px solid black; */
+    font-weight: normal;
+    height: 40px;
+    line-height: 40px;
+
+    span {
+      font-size: 0px;
+      & :first-child {
+        color: skyblue;
+        font-style: normal;
+        font-size: 28px;
+      }
+      & :nth-child(2) {
+        /* color: skyblue; */
+        font-style: normal;
+        font-size: 28px;
+      }
+    }
+    a {
+      font-size: 16px;
+      float: right;
+    }
+  }
+  .music-item {
+    height: 98px;
+    background-color: #f6f6f6;
+    margin-top: 20px;
+    .item-img {
+      width: 98px;
+      height: 98px;
+      background-color: purple;
+      float: left;
+    }
+    .item-text {
+      height: 98px;
+      width: 232px;
+      float: right;
+      background: url("./images/rightRow.png") no-repeat 190px;
+      cursor: pointer;
+      background-size: 20px;
+      h4 {
+        font-size: 14px;
+        padding: 8px 0;
+      }
+      p {
+        font-size: 14px;
+        color: #000;
+        line-height: 25px;
+      }
+    }
+  }
+}
