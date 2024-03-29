@@ -1,39 +1,14 @@
 # enjoy-css
 
-#### 介绍
-{**以下是 Gitee 平台说明，您可以替换此简介**
-Gitee 是 OSCHINA 推出的基于 Git 的代码托管平台（同时支持 SVN）。专为开发者提供稳定、高效、安全的云端软件开发协作平台
-无论是个人、团队、或是企业，都能够用 Gitee 实现代码托管、项目管理、协作开发。企业项目请看 [https://gitee.com/enterprises](https://gitee.com/enterprises)}
+- 下面的列表中收罗了项目中几乎所有的 css 案例
 
-#### 软件架构
-软件架构说明
+|                                               #                                               | Project                                                                            | Live Demo |
+| :-------------------------------------------------------------------------------------------: | ---------------------------------------------------------------------------------- | --------- |
+|  [常见电商卡片效果](https://gitee.com/gu-li-han-river/enjoy-css/tree/develop/src/good-card)   | [Live Demo](https://gu-li-han-river.gitee.io/enjoy-css/baidu-news-list/index.html) |
+| [百度新闻热搜](https://gitee.com/gu-li-han-river/enjoy-css/tree/develop/src/baidu-news-list)  | [Live Demo](https://gu-li-han-river.gitee.io/enjoy-css/baidu-news-list/index.html) |
+|     [绘画板](https://gitee.com/gu-li-han-river/enjoy-css/tree/develop/src/drawing-board)      | [Live Demo](https://gu-li-han-river.gitee.io/enjoy-css/drawing-board/index.html)   |
+|   [搜狗音乐热搜](https://gitee.com/gu-li-han-river/enjoy-css/tree/develop/src/sougou-list)    | [Live Demo](https://gu-li-han-river.gitee.io/enjoy-css/sougou-list/inde.html)      |
+| [小米商城侧边栏](https://gitee.com/gu-li-han-river/enjoy-css/tree/develop/src/xiaomi-sidebar) | [Live Demo](https://gu-li-han-river.gitee.io/enjoy-css/xiaomi-sidebar/index.html)  |
+|      [浮动布局](https://gitee.com/gu-li-han-river/enjoy-css/tree/develop/src/float-bar)       | [Live Demo](https://gu-li-han-river.gitee.io/enjoy-css/float-bar/index.html)       |
 
-
-#### 安装教程
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+> 注意：该项目中涉及的所有项目仅供学习和交流
