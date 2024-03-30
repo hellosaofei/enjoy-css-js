@@ -4,7 +4,8 @@
 
 |                                               #                                               | Project                                                                            | Live Demo |
 | :-------------------------------------------------------------------------------------------: | ---------------------------------------------------------------------------------- | --------- |
-|  [常见电商卡片效果](https://gitee.com/gu-li-han-river/enjoy-css/tree/develop/src/good-card)   | [Live Demo](https://gu-li-han-river.gitee.io/enjoy-css/baidu-news-list/index.html) |
+|  [常见电商卡片效果](https://gitee.com/gu-li-han-river/enjoy-css/tree/develop/src/good-card)   | [Live Demo](https://gu-li-han-river.gitee.io/enjoy-css/good-card/index.html)       |
+| [常见电商卡片效果 1](https://gitee.com/gu-li-han-river/enjoy-css/tree/develop/src/good-card1) | [Live Demo](https://gu-li-han-river.gitee.io/enjoy-css/good-card1/index.html)      |
 | [百度新闻热搜](https://gitee.com/gu-li-han-river/enjoy-css/tree/develop/src/baidu-news-list)  | [Live Demo](https://gu-li-han-river.gitee.io/enjoy-css/baidu-news-list/index.html) |
 |     [绘画板](https://gitee.com/gu-li-han-river/enjoy-css/tree/develop/src/drawing-board)      | [Live Demo](https://gu-li-han-river.gitee.io/enjoy-css/drawing-board/index.html)   |
 |   [搜狗音乐热搜](https://gitee.com/gu-li-han-river/enjoy-css/tree/develop/src/sougou-list)    | [Live Demo](https://gu-li-han-river.gitee.io/enjoy-css/sougou-list/inde.html)      |
