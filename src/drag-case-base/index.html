@@ -1,0 +1,92 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>菜鸟教程(runoob.com)</title>
+    <style>
+      .droptarget {
+        width: 100px;
+        height: 35px;
+        margin: 15px;
+        padding: 10px;
+        border: 1px solid #aaaaaa;
+      }
+      #demo {
+        display: inline;
+      }
+    </style>
+  </head>
+  <body>
+    <p>在两个矩形框中来回拖动 p 元素:</p>
+    <div class="droptarget">
+      <p draggable="true" id="dragtarget">拖动我!</p>
+    </div>
+    <div class="droptarget"></div>
+
+    <p class="dragstart">dragstart:-----</p>
+    <p class="draging">draging:-----</p>
+    <p class="dragend">dragend:-----</p>
+    <p class="dragenter">dragenter:-----</p>
+    <p class="dragover">dragover:-----</p>
+    <p class="dragleave">dragleave:-----</p>
+    <p class="ondrop">ondrop:-----</p>
+    <script>
+      /* 拖动时触发*/
+      document.addEventListener("dragstart", function (event) {
+        //dataTransfer.setData()方法设置数据类型和拖动的数据
+        event.dataTransfer.setData("Text", event.target.id);
+        document.querySelector(".dragstart").innerHTML =
+          "dragstart:开始拖动 p 元素";
+        //修改拖动元素的透明度
+        event.target.style.opacity = "0.4";
+      });
+      //在拖动p元素的同时,
+      document.addEventListener("drag", function (event) {
+        document.querySelector(".draging").innerHTML = "draging:p 元素拖动中";
+      });
+      // 当拖完p元素输出一些文本元素和重置透明度
+      document.addEventListener("dragend", function (event) {
+        document.querySelector(".dragend").innerHTML =
+          "dragend:完成 p 元素的拖动";
+        event.target.style.opacity = "1";
+      });
+      /* 拖动完成后触发 */
+      // 当p元素完成拖动进入droptarget,改变div的边框样式
+      document.addEventListener("dragenter", function (event) {
+        if (event.target.className == "droptarget") {
+          document.querySelector(".dragend").innerHTML =
+            "dragend:完成 p 元素的拖动";
+          event.target.style.border = "3px dotted red";
+        }
+      });
+      // 默认情况下,数据/元素不能在其他元素中被拖放。对于drop我们必须防止元素的默认处理
+      document.addEventListener("dragover", function (event) {
+        event.preventDefault();
+        document.querySelector(".dragover").innerHTML =
+          "dragover:被拖动的对象在另一对象容器范围内拖动";
+      });
+      // 当可拖放的p元素离开droptarget，重置div的边框样式
+      document.addEventListener("dragleave", function (event) {
+        document.querySelector(".dragleave").innerHTML =
+          "dragleave:被拖动的元素离开目标区域";
+        if (event.target.className == "droptarget") {
+          event.target.style.border = "";
+        }
+      });
+      /*对于drop,防止浏览器的默认处理数据(在drop中链接是默认打开)
+复位输出文本的颜色和DIV的边框颜色
+利用dataTransfer.getData()方法获得拖放数据
+拖拖的数据元素id(“drag1”)
+拖拽元素附加到drop元素*/
+      document.addEventListener("drop", function (event) {
+        document.querySelector(".ondrop").innerHTML = "ongrop:鼠标落下";
+        event.preventDefault();
+        if (event.target.className == "droptarget") {
+          //   document.getElementById("demo").style.color = "";
+          event.target.style.border = "";
+          var data = event.dataTransfer.getData("Text");
+          event.target.appendChild(document.getElementById(data));
+        }
+      });
+    </script>
+  </body>
+</html>
