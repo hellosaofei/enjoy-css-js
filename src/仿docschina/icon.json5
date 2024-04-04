@@ -1,0 +1,26 @@
+{
+  nodejs: {
+    nodeJs: "https://img.nodejs.cn/favicon.png",
+  },
+  Vue: {},
+  React: {},
+  视觉图表: {
+    echarts: "https://echarts.apache.org/zh/images/favicon.png?_v_=20200710_1",
+    threeJs: "	https://threejs.org/files/favicon_white.ico",
+    chartsJs: "https://chart.nodejs.cn/favicon.ico",
+  },
+  代码管理: {},
+  编译打包工具: {
+    Vite: "	https://cn.vitejs.dev/logo.svg",
+    webpack: "https://www.webpackjs.com/icon_144x144.png",
+    gulp: "https://www.gulpjs.com.cn/img/favicon.png",
+  },
+  UI组件库: {},
+  css: {
+    sass: "https://sass.nodejs.cn/icon.png",
+    less: "	https://less.nodejs.cn/public/ico/favicon.ico",
+    stylus: "	https://less.nodejs.cn/public/ico/favicon.ico",
+    "animate.css": "	https://animate.style/img/favicon.ico",
+  },
+  代码检查: {},
+}
