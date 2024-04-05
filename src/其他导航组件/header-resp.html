@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden; /* 防止水平滚动 */
+      }
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        width: 100%;
+        height: 60px;
+        background-color: #333;
+        color: #fff;
+        z-index: 1000; /* 确保导航栏在其他内容之上 */
+        .logo {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          margin-left: 20px;
+          .logo-img-box {
+            width: 32px;
+            height: 32px;
+            .logo-img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+          .logo-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-left: 8px;
+            background: linear-gradient(-60deg, #8700ff 0, #ff009e 100%);
+            background-clip: text;
+            /* -webkit-background-clip: text; */
+            -webkit-text-fill-color: transparent;
+          }
+        }
+        .navs {
+          display: flex;
+          margin-right: 20px;
+          .nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            margin-left: 12px;
+          }
+          .active {
+            color: #8700ff;
+          }
+        }
+      }
+      /* 汉堡图标 */
+      .navbar-toggle {
+        display: none; /* 默认隐藏汉堡图标 */
+        cursor: pointer;
+        margin-left: 20px;
+        span {
+          display: block;
+          width: 25px;
+          height: 3px;
+          background-color: #fff;
+          margin-bottom: 5px;
+          transition: 0.3s ease-in-out;
+        }
+      }
+      /* 侧边栏 */
+      .sidebar {
+        position: fixed;
+        top: 60px;
+        left: -250px; /* 初始位置在屏幕左侧外部 */
+        width: 250px;
+        height: 100vh;
+        border-radius: 0 10px 10px 0;
+        background-color: #333;
+        color: #fff;
+        transition: left 0.3s ease-in-out;
+        z-index: 1000; /* 确保侧边栏在内容之上 */
+        .sidebar-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          .sidebar-title {
+            margin: 20px 0 20px;
+          }
+          ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            li {
+              padding: 10px;
+              border-bottom: 1px solid #444;
+              a {
+                color: #fff;
+                text-decoration: none;
+              }
+            }
+          }
+        }
+      }
+      .sidebar.show {
+        left: 0; /* 显示侧边栏 */
+      }
+      .show-icon {
+        img {
+          width: 30px;
+          height: 30px;
+        }
+      }
+      /* 屏幕宽度大于700px：PC端 */
+      @media (min-width: 700px) {
+        .show-icon {
+          display: none !important;
+        }
+        .sidebar.show {
+          left: -250px; /* 显示侧边栏 */
+        }
+      }
+      /* 屏幕宽度小于700px：APP端 */
+      @media (max-width: 700px) {
+        .logo {
+          display: none !important;
+        }
+        .show-title {
+          display: none !important;
+        }
+        .navbar-toggle {
+          display: block; /* 在小屏幕上显示汉堡图标 */
+        }
+
+        .sidebar {
+          display: block; /* 确保侧边栏在小屏幕上存在 */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo">
+        <div class="logo-img-box">
+          <img
+            class="logo-img"
+            src="https://turbo.build/images/docs/repo/repo-hero-logo-dark.svg"
+            alt=""
+          />
+        </div>
+        <div class="logo-title">一尾流莺</div>
+      </div>
+      <div class="navbar-toggle" onclick="showEle()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="show-title navs">
+        <div class="nav active">前端导航</div>
+        <div class="nav">前端导航</div>
+        <div class="nav">前端导航</div>
+        <div class="nav">前端导航</div>
+      </div>
+      <div class="show-icon navs">
+        <div class="nav active">
+          <img src="./images/主页.svg" alt="" />
+        </div>
+        <div class="nav">
+          <img src="./images/主页.svg" alt="" />
+        </div>
+        <div class="nav">
+          <img src="./images/主页.svg" alt="" />
+        </div>
+        <div class="nav">
+          <img src="./images/主页.svg" alt="" />
+        </div>
+      </div>
+    </div>
+    <div class="sidebar" id="sidebar_1">
+      <div class="sidebar-container">
+        <span class="sidebar-title">让前端简单一点</span>
+        <ul>
+          <li><a href="#">链接1</a></li>
+          <li><a href="#">链接2</a></li>
+          <li><a href="#">链接3</a></li>
+          <!-- 其他链接 -->
+        </ul>
+      </div>
+    </div>
+    <script>
+      function showEle() {
+        // console.log(e);
+        console.log("1111");
+        const sidebar = document.getElementById("sidebar_1");
+        sidebar.classList.toggle("show");
+      }
+    </script>
+  </body>
+</html>

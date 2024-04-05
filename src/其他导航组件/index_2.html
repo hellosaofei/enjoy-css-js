@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.bootcdn.net/ajax/libs/sass.js/0.11.1/sass.min.js"></script>
+    <title>Document</title>
+    <style>
+      .part-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .part-header {
+          justify-content: center;
+          display: flex;
+          align-items: center;
+          div {
+            padding: 60px 0 40px;
+          }
+        }
+        .part-content {
+          display: grid;
+          gap: 10px;
+          justify-content: center;
+          grid-template-columns: repeat(auto-fill, 165px);
+          .box {
+            height: 215px;
+            width: 165px;
+            background-color: antiquewhite;
+            border: 1px solid black;
+          }
+        }
+      }
+
+      .content-box {
+        align-items: center;
+        display: flex;
+      }
+      @media (min-width: 768px) {
+        .part-content {
+          width: 80vw;
+          gap: 26px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 左侧导航 -->
+    <nav>
+      <ul>
+        <li><a href="#" onclick="scrollToSection('section1')">部分1</a></li>
+        <li><a href="#" onclick="scrollToSection('section2')">部分2</a></li>
+        <li><a href="#" onclick="scrollToSection('section3')">部分3</a></li>
+      </ul>
+    </nav>
+    <div class="container">
+      <section class="part-container">
+        <div class="part-header">
+          <div>react组件库</div>
+        </div>
+
+        <div class="part-content">
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      function scrollToSection(sectionId) {
+        // 阻止默认的链接跳转行为
+        event.preventDefault();
+
+        // 获取目标元素
+        var section = document.getElementById(sectionId);
+
+        // 滚动到目标元素的位置
+        section.scrollIntoView({ behavior: "smooth" }); // 使用平滑滚动
+      }
+    </script>
+  </body>
+</html>

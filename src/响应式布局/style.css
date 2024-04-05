@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* 防止内容溢出到侧边栏区域 */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  .navbar-brand {
+    font-size: 1.5em;
+  }
+}
+.navbar-toggle {
+  display: none; /* 默认隐藏汉堡图标 */
+  cursor: pointer;
+  span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin-bottom: 5px;
+    transition: 0.3s ease-in-out;
+  }
+}
+/* #navbar-toggle  */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* 初始位置在屏幕左侧外部 */
+  width: 250px;
+  height: 80vh;
+  background-color: #333;
+  color: #fff;
+  transition: left 0.3s ease-in-out;
+  z-index: 1000; /* 确保侧边栏在内容之上 */
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      padding: 10px;
+      border-bottom: 1px solid #444;
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+  }
+}
+.sidebar.show {
+  left: 0; /* 显示侧边栏 */
+}
+@media (max-width: 768px) {
+  .navbar-toggle {
+    display: block; /* 在小屏幕上显示汉堡图标 */
+  }
+
+  .sidebar {
+    display: block; /* 确保侧边栏在小屏幕上存在 */
+  }
+
+  /* 在小屏幕上隐藏原有的侧边栏内容（如果有的话） */
+  /* 例如：#original-sidebar { display: none; } */
+}

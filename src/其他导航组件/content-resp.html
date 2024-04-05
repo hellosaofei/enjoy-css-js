@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ul {
+        padding-left: 0px;
+      }
+      .content-container {
+        display: flex;
+        padding-top: 41px; /* 为固定导航栏留出空间 */
+        height: calc(100vh - 50px); /* 减去导航栏的高度 */
+        .left-sidebar {
+          flex: 0 0 20%; /* 宽度为20% */
+          background-color: #f2f2f2;
+          overflow-y: auto; /* 允许垂直滚动 */
+          padding: 10px;
+          height: 100%; /* 与容器等高 */
+          ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            li {
+              list-style: none;
+              margin-bottom: 8px;
+              a {
+                color: #000;
+                text-decoration: none;
+              }
+            }
+          }
+        }
+        .main-content {
+          flex: 1; /* 剩余空间给主要内容 */
+          background-color: #fff;
+          overflow-y: auto; /* 允许垂直滚动 */
+          padding: 10px;
+          height: 100%; /* 与容器等高 */
+        }
+      }
+      .part-container {
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        .part-header {
+          justify-content: center;
+          display: flex;
+          /* align-items: center; */
+          div {
+            padding: 60px 0 40px;
+          }
+        }
+        .part-content {
+          display: grid;
+          gap: 10px;
+          justify-content: center;
+          grid-template-columns: repeat(auto-fill, 250px);
+          /* grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); */
+          .box {
+            height: 215px;
+            width: 165px;
+            background-color: antiquewhite;
+            border: 1px solid black;
+          }
+        }
+      }
+      .box-container {
+        display: flex;
+        flex-direction: column;
+        .effect-1 {
+          box-sizing: border-box;
+          height: 140px;
+          width: 240px;
+          display: flex;
+          flex-direction: column;
+          background-color: antiquewhite;
+          border-radius: 5px;
+          padding: 15px 8px 10px;
+          .top-part {
+            display: flex;
+            margin-bottom: 20px;
+            padding-left: 10px;
+            .left-content {
+              margin-right: 20px;
+            }
+            .right-content {
+              display: flex;
+              flex-direction: column;
+              span {
+                margin-bottom: 10px;
+              }
+              .tag-list {
+                display: flex;
+                justify-content: flex-start;
+                gap: 10px;
+              }
+            }
+          }
+          .bottom-part {
+            color: grey;
+            font-size: 13px;
+          }
+        }
+      }
+
+      @media (max-width: 440px) {
+        .left-sidebar {
+          display: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content-container">
+      <nav class="left-sidebar">
+        <ul>
+          <li><a href="#" onclick="scrollToSection('part1')">部分1</a></li>
+          <li><a href="#" onclick="scrollToSection('part2')">部分2</a></li>
+          <li><a href="#" onclick="scrollToSection('part3')">部分3</a></li>
+        </ul>
+      </nav>
+      <div class="main-content">
+        <section class="part-container">
+          <div class="part-header">
+            <div>react组件库</div>
+          </div>
+
+          <div class="part-content">
+            <div class="box-container">
+              <div class="effect-1">
+                <div class="top-part">
+                  <div class="left-content">
+                    <img
+                      src="https://vitejs.dev/logo.svg"
+                      width="45"
+                      height="45"
+                      alt=""
+                    />
+                  </div>
+                  <div class="right-content">
+                    <span>ViteJs</span>
+                    <div class="tag-list">
+                      <img src="./images/主页.svg" width="25" height="25" />
+                      <img
+                        src="./images/github-fill.svg"
+                        width="25"
+                        height="25"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="bottom-part">
+                  可以成为是一个伟大的插件，她的美丽在于脚本文件
+                </div>
+              </div>
+            </div>
+            <div class="box-container">
+              <div class="effect-1">
+                <div class="top-part">
+                  <div class="left-content">
+                    <img
+                      src="https://vitejs.dev/logo.svg"
+                      width="45"
+                      height="45"
+                      alt=""
+                    />
+                  </div>
+                  <div class="right-content">
+                    <span>ViteJs</span>
+                    <div class="tag-list">
+                      <img src="./images/主页.svg" width="25" height="25" />
+                      <img
+                        src="./images/github-fill.svg"
+                        width="25"
+                        height="25"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="bottom-part">
+                  可以成为是一个伟大的插件，她的美丽在于脚本文件
+                </div>
+              </div>
+            </div>
+            <div class="box-container">
+              <div class="effect-1">
+                <div class="top-part">
+                  <div class="left-content">
+                    <img
+                      src="https://vitejs.dev/logo.svg"
+                      width="45"
+                      height="45"
+                      alt=""
+                    />
+                  </div>
+                  <div class="right-content">
+                    <span>ViteJs</span>
+                    <div class="tag-list">
+                      <img src="./images/主页.svg" width="25" height="25" />
+                      <img
+                        src="./images/github-fill.svg"
+                        width="25"
+                        height="25"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="bottom-part">
+                  可以成为是一个伟大的插件，她的美丽在于脚本文件
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
