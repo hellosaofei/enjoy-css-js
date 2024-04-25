@@ -1,0 +1,9 @@
+.font-area {
+  font-size: 72px;
+  font-weight: bold;
+  background: linear-gradient(to right, #3a1c71, #ffaf7b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}

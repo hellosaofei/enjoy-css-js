@@ -12,6 +12,10 @@
         height: 100%;
         overflow: hidden; /* 防止水平滚动 */
       }
+      /* 用于控制侧边栏的显示和隐藏 */
+      .show {
+        left: 0; /* 显示侧边栏 */
+      }
       .header {
         display: flex;
         align-items: center;
@@ -22,11 +26,13 @@
         background-color: #333;
         color: #fff;
         z-index: 1000; /* 确保导航栏在其他内容之上 */
-        .logo {
+        /* 顶部导航栏-左侧logo部分 */
+        .logo-container {
           display: flex;
           align-items: center;
           cursor: pointer;
           margin-left: 20px;
+          /* logo部分的图片盒子 */
           .logo-img-box {
             width: 32px;
             height: 32px;
@@ -35,6 +41,7 @@
               height: 100%;
             }
           }
+          /* logo部分的标题部分 */
           .logo-title {
             font-size: 24px;
             font-weight: 700;
@@ -45,6 +52,7 @@
             -webkit-text-fill-color: transparent;
           }
         }
+        /* 顶部导航栏--右侧部分 */
         .navs {
           display: flex;
           margin-right: 20px;
@@ -74,8 +82,8 @@
           transition: 0.3s ease-in-out;
         }
       }
-      /* 侧边栏 */
-      .sidebar {
+      /* 侧边栏-响应式 */
+      .sidebar-resp {
         position: fixed;
         top: 60px;
         left: -250px; /* 初始位置在屏幕左侧外部 */
@@ -86,11 +94,11 @@
         color: #fff;
         transition: left 0.3s ease-in-out;
         z-index: 1000; /* 确保侧边栏在内容之上 */
-        .sidebar-container {
+        .sidebar-resp-container {
           display: flex;
           flex-direction: column;
           align-items: center;
-          .sidebar-title {
+          .sidebar-resp-title {
             margin: 20px 0 20px;
           }
           ul {
@@ -108,9 +116,7 @@
           }
         }
       }
-      .sidebar.show {
-        left: 0; /* 显示侧边栏 */
-      }
+
       .show-icon {
         img {
           width: 30px;
@@ -119,18 +125,21 @@
       }
       /* 屏幕宽度大于700px：PC端 */
       @media (min-width: 700px) {
+        /* 顶部导航栏右侧图标 */
         .show-icon {
           display: none !important;
         }
-        .sidebar.show {
+        /* 左侧导航栏-响应式部分 */
+        .sidebar-resp.show {
           left: -250px; /* 显示侧边栏 */
         }
       }
       /* 屏幕宽度小于700px：APP端 */
       @media (max-width: 700px) {
-        .logo {
+        .logo-container {
           display: none !important;
         }
+
         .show-title {
           display: none !important;
         }
@@ -138,7 +147,7 @@
           display: block; /* 在小屏幕上显示汉堡图标 */
         }
 
-        .sidebar {
+        .sidebar-resp {
           display: block; /* 确保侧边栏在小屏幕上存在 */
         }
       }
@@ -146,7 +155,7 @@
   </head>
   <body>
     <div class="header">
-      <div class="logo">
+      <div class="logo-container">
         <div class="logo-img-box">
           <img
             class="logo-img"
@@ -182,9 +191,9 @@
         </div>
       </div>
     </div>
-    <div class="sidebar" id="sidebar_1">
-      <div class="sidebar-container">
-        <span class="sidebar-title">让前端简单一点</span>
+    <div class="sidebar-resp" id="sidebar-resp_1">
+      <div class="sidebar-resp-container">
+        <span class="sidebar-resp-title">让前端简单一点</span>
         <ul>
           <li><a href="#">链接1</a></li>
           <li><a href="#">链接2</a></li>
@@ -195,10 +204,8 @@
     </div>
     <script>
       function showEle() {
-        // console.log(e);
-        console.log("1111");
-        const sidebar = document.getElementById("sidebar_1");
-        sidebar.classList.toggle("show");
+        const sidebar_resp = document.getElementById("sidebar-resp_1");
+        sidebar_resp.classList.toggle("show");
       }
     </script>
   </body>

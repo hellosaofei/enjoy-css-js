@@ -1,0 +1,96 @@
+.father {
+  border: solid 1px;
+  width: 300px;
+  height: 300px;
+}
+.son {
+  background: #e4393c;
+  width: 100px;
+  height: 100px;
+}
+
+/* 方案一（常用）：父元素flex布局，且设置子元素水平竖直居中 */
+/* .father {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+.son {
+} */
+
+/* 方案二（常用）：父元素flex，子元素margin：auto */
+
+/* .father {
+  display: flex;
+}
+.son {
+  margin: auto;
+} */
+
+/* 方案三（常用）：父相子绝，子元素absolute + transform
+translate(-50%, -50%):参考自身位置各自平移自身的50% */
+
+/* .father {
+  position: relative;
+}
+.son {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+} */
+
+/* 方案四：父相子绝，子元素absolute + margin:auto*/
+/* .father {
+  position: relative;
+}
+.son {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+} */
+
+/* 方案五：父相子绝，子元素absolute + 负margin */
+/* .father {
+  position: relative;
+}
+.son {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -50px;
+  margin-top: -50px;
+} */
+
+/* 方案六：absolute+calc */
+/* 缺点：calc的兼容性、需要知道子元素的宽高 */
+.father {
+  position: relative;
+}
+.son {
+  position: absolute;
+  top: calc(50% - 50px);
+  left: calc(50% - 50px);
+}
+
+/* 方案七：line-height */
+/* .father {
+  line-height: 300px;
+  text-align: center;
+}
+.son {
+  display: inline-block;
+  vertical-align: middle;
+} */
+
+/* 方案八：grid布局 */
+/* .father {
+  display: grid;
+}
+.son {
+  align-self: center;
+  justify-self: center;
+} */
