@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
+    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/qrcode/1.5.0/qrcode.min.js"></script> -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/qrcode/1.5.1/qrcode.js"></script>
+    <!-- <script src="https://unpkg.com/qrcode@1.5.3/qrcode.js"></script> -->
+  </head>
+  <body>
+    <!-- 仅演示两者的基本使用 -->
+    <svg id="barcode"></svg>
+    <div id="canvas"></div>
+    <div></div>
+    <script>
+      const qrcode_option = {
+        color: {
+          dark: "#010599FF",
+          light: "#FFBF60FF",
+        },
+      };
+      JsBarcode("#barcode", "https://www.baidu.com", {
+        displayValue: false,
+      });
+      // QRCode.toCanvas(
+      //   document.getElementById("canvas"),
+      //   "sample text",
+      //   { errorCorrectionLevel: "H" },
+      //   function (error) {
+      //     if (error) console.error(error);
+      //     console.log("success!");
+      //   }
+      // );
+      var canvas = document.getElementById("canvas");
+
+      QRCode.toCanvas(canvas, "162772833939", function (error) {
+        if (error) console.error(error);
+        console.log("success!");
+      });
+    </script>
+  </body>
+</html>

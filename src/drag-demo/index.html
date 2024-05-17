@@ -1,0 +1,90 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>实现拖拽排序</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+      }
+      .list {
+        width: 80%;
+        margin-top: 2em;
+      }
+
+      .list-item {
+        margin: 5px 0;
+        padding: 0 20px;
+        line-height: 40px;
+        height: 40px;
+        background: linear-gradient(to right, rgb(61, 132, 160), #87deed);
+        color: #fff;
+        cursor: move;
+        user-select: none;
+        border-radius: 5px;
+      }
+      .moving {
+        background: transparent;
+        color: transparent;
+        /* opacity: 0.5; */
+        border: 1px dashed #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="list">
+      <div class="list-item" draggable="true">1</div>
+      <div class="list-item" draggable="true">2</div>
+      <div class="list-item" draggable="true">3</div>
+      <div class="list-item" draggable="true">4</div>
+    </div>
+
+    <script>
+      // 由于本案例只操作List这一个DOM节点，且不知道目标节点是什么
+      // 所以给list同时添加了源节点和目标结点 相关的drag事件
+      const list = document.querySelector(".list");
+      // 保存被拖拽的节点
+      let sourceNode;
+
+      /*    添加源节点的drag事件     */
+      list.ondragstart = (e) => {
+        //拖拽开始时，为元素添加样式moving，使用异步是为了避免刚拖拽元素就变透明
+        setTimeout(() => {
+          e.target.classList.add("moving");
+        }, 0);
+        sourceNode = e.target;
+      };
+      list.ondragend = () => {
+        sourceNode.classList.remove("moving");
+      };
+
+      list.ondragover = (e) => {
+        e.preventDefault();
+      };
+      list.ondragenter = (e) => {
+        e.preventDefault();
+        if (e.target === list || e.target === sourceNode) {
+          return;
+        }
+        const children = [...list.children];
+        const sourceIndex = children.indexOf(sourceNode);
+        const targetIndex = children.indexOf(e.target);
+        if (sourceIndex < targetIndex) {
+          list.insertBefore(sourceNode, e.target.nextElementSibling);
+          // console.log('target节点在下方')
+        } else {
+          list.insertBefore(sourceNode, e.target);
+          // console.log('target节点在上方')
+        }
+        console.log(e.target);
+      };
+    </script>
+  </body>
+</html>
