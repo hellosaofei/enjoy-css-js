@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.bg-b {
+  background-color: skyblue;
+}
+.bg-r {
+  background-color: rosybrown;
+}
+.bg-g {
+  background-color: darkgreen;
+}
+.bg-gold {
+  background-color: darkgoldenrod;
+}
+
+/* 主容器 */
+.container {
+  width: 500px;
+  height: 300px;
+  margin: 10px auto;
+  overflow: hidden;
+  position: relative;
+  outline: 10px solid #000;
+}
+/* 轮播图父容器 */
+.carousel {
+  display: flex;
+}
+.carousel .item div {
+  width: 500px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 左右箭头 */
+.carousel-arrow {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #000;
+  opacity: 0.2;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.carousel-arrow:hover {
+  opacity: 0.5;
+}
+.carousel-arrow > img {
+  width: 30px;
+}
+.arrowLeft {
+  left: 10px;
+}
+.arrowRight {
+  right: 10px;
+}
+
+/* 指示器 */
+.indicator {
+  position: absolute;
+  bottom: 10px;
+  display: flex;
+  gap: 5px;
+  /* outline: 1px solid #fff; */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* 每个指示器 */
+span {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+span:hover {
+  cursor: pointer;
+}
+
+span.active {
+  background-color: #fff;
+  border-color: 2px solid #fff;
+}
